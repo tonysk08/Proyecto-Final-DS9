@@ -1,0 +1,29 @@
+{
+  "name": "proyecto-final-ds9",
+  "version": "1.0.0",
+  "description": "Proyecto DS9, comercio electronico. Virtual Market (vm)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonysk08/Proyecto-Final-DS9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tonysk08/Proyecto-Final-DS9/issues"
+  },
+  "homepage": "https://github.com/tonysk08/Proyecto-Final-DS9#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
