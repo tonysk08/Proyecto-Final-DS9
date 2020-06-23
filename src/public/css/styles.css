@@ -1,0 +1,11 @@
+
+footer
+{
+    background-color: #163172;
+    position:sticky;
+     bottom:0;
+     width:100%;
+     height:60px;
+     color:white;
+     text-align: center;
+}
