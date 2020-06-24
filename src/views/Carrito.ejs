@@ -1,0 +1,97 @@
+<%- include ('template/_header')%>
+
+<body>
+    <br>
+    <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-auto">
+            <div class="table-responsive">
+                <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Carrito de Compras</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><img src="img/1.jpg" alt="..." width="75" height="75"></th>
+                    <td>Producto1</td>
+                    <td>$5.99</td>
+                    <td><input type="number" min="0" value="1" style="width: 50px;"></td>
+                    <td><button type="button" class="btn btn-outline-success">Eliminar</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><img src="img/2.jpg" alt="..." width="75" height="75"></th>
+                    <td>Producto2</td>
+                    <td>$1.25</td>
+                    <td><input type="number" min="0" value="1" style="width: 50px;"></td>
+                    <td><button type="button" class="btn btn-outline-success">Eliminar</button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><img src="img/3.jpg" alt="..." width="75" height="75"></th>
+                    <td>Producto3</td>
+                    <td>$3.99</td>
+                    <td><input type="number" min="0" value="1" style="width: 50px;"></td>
+                    <td><button type="button" class="btn btn-outline-success">Eliminar</button></td>
+                  </tr>
+                </tbody>
+                </table>
+             </div> 
+          </div>
+          <div class="col-md-auto">
+            <div class="table-responsive"></div>  
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Detalles de la Compra</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Producto1</th>
+                        <td>5.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Producto2</th>
+                        <td>1.25</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Producto3</th>
+                        <td>3.99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SubTotal</th>
+                        <td>11.23</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ITBMS 7%</th>
+                        <td>0.78</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <td>12.01</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <center>
+                    <button type="button" class="btn btn-success">Seleccionar Método de Pago</button>
+                </center>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    
+ <br><br>   
+</body>
+
+<%- include ('template/_footer')%>

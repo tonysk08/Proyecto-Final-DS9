@@ -1,0 +1,178 @@
+
+<%- include ('template/_header')%>
+<!-- Page Content -->
+  <br><br>
+
+    <div class="container">
+        <h5>Selección de Método de Pago</h5><br>
+        <div class="row justify-content-md-center">
+            <!-- Tabla de Pagos-->
+            <div class="col-md-auto">
+                <form class="bs-example" style="width: 500px;"action="">
+                    <div class="panel-group" id="accordion">
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <label for='r11' style='width: 350px;'>
+                                <input type='radio' id='r11' name='occupation' value='Working' required />Tarjeta de Crédito
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"></a>
+                              </label>
+                          </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <p>
+                                <form>
+                                    <div class="form-row">
+                                      <div class="col">
+                                        <input type="text" class="form-control" placeholder="Número de tarjeta" required>
+                                      </div>
+                                      <div class="col">
+                                        <input type="date" class="form-control" placeholder="Caducidad (MM/AA)" required>
+                                      </div>
+                                      <div class="col">
+                                        <input type="text" class="form-control" placeholder="Código de Tarjeta" required>
+                                      </div>
+                                    </div>
+                                  </form>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <label for='r12' style='width: 350px;'>
+                                <input type='radio' id='r12' name='occupation' value='Working' required />Tarjeta de Débito
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"></a>
+                              </label>
+                          </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <p>
+                                <form>
+                                    <div class="form-row">
+                                      <div class="col">
+                                        <input type="text" class="form-control" placeholder="Número de tarjeta" required>
+                                      </div>
+                                      <div class="col">
+                                        <input type="date" class="form-control" placeholder="Caducidad (MM/AA)" required>
+                                      </div>
+                                      <div class="col">
+                                        <input type="text" class="form-control" placeholder="Código de Tarjeta" required>
+                                      </div>
+                                    </div>
+                                  </form>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class=panel-title>
+                              <label for='r13' style='width: 350px;'>
+                                <input type='radio' id='r13' name='occupation' value='Not-Working' required />Transferencia Bancaria
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"></a>
+                              </label>
+                          </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <p>Nombre de Cuenta<br>Número de Cuenta</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                              <label for='r14' style='width: 350px;'>
+                                <input type='radio' id='r14' name='occupation' value='Working' required />Otros Métodos de Pago
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"></a>
+                              </label>
+                          </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <p>
+                                <button type="submit" style="border: none;"><img src="img/paypal.jpg" width="100px" height="50px"/></button>
+                                <button type="submit" style="border: none;"><img src="img/paguelo.png" width="100px" height="50px"/></button>
+                                <button type="submit" style="border: none;"><img src="img/pagadito.jpg" width="100px" height="50px"/></button>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class=panel-title>
+                              <label for='r15' style='width: 350px;'>
+                                <input type='radio' id='r15' name='occupation' value='Not-Working' required />Efectivo
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"></a>
+                              </label>
+                          </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <p>Pago en la entrega del pedido</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+            <!-- Tabla del Detalles-->
+            <div class="col-md-auto">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Detalles del Pedido</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td>12.01</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Envio</th>
+                            <td>4.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pago</th>
+                            <td>16.01</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <center>
+                        <button type="button" class="btn btn-success">Pagar</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+         
+  <br><br>
+<%- include ('template/_footer')%>
+
+<!--JavaScripts-->
+<script>
+    $('#r11').on('click', function(){
+        $(this).parent().find('a').trigger('click')
+    })
+    
+    $('#r12').on('click', function(){
+        $(this).parent().find('a').trigger('click')
+    })
+    $('#r13').on('click', function(){
+        $(this).parent().find('a').trigger('click')
+    })
+    
+    $('#r14').on('click', function(){
+        $(this).parent().find('a').trigger('click')
+    })
+    $('#r15').on('click', function(){
+        $(this).parent().find('a').trigger('click')
+    })
+</script>
