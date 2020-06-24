@@ -3,5 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/',(req,res) => { res.render('LandingPage')});
+router.get('/',(req,res) => { res.render('Ayuda')});
+
 
 module.exports = router;
