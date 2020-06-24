@@ -19,3 +19,7 @@ footer
     -o-background-size: cover;
     background-size: cover;
   }
+
+.ccd{
+  background: rgba(0, 0, 0, 0.5);
+}
