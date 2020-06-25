@@ -1,0 +1,98 @@
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<div class="d-flex" id="wrapper">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Categorías </div>
+      <div class="list-group list-group-flush">
+                <a href="#section1" class="list-group-item list-group-item-action bg-light">Marca Propia</a>
+                <a href="#section2" class="list-group-item list-group-item-action bg-light">Alimentos</a>
+                <a href="#section3" class="list-group-item list-group-item-action bg-light">Bebé</a>
+                <a href="#section4" class="list-group-item list-group-item-action bg-light">Hogar</a>
+                <a href="#section5" class="list-group-item list-group-item-action bg-light">Limpieza</a>
+                <a href="#section6" class="list-group-item list-group-item-action bg-light">Bebidas</a>
+                <a href="#section7" class="list-group-item list-group-item-action bg-light">Mascotas</a>
+                <a href="#section8" class="list-group-item list-group-item-action bg-light">Higiene</a>
+                <a href="#section9" class="list-group-item list-group-item-action bg-light">Ferretería</a>
+                <a href="#section10" class="list-group-item list-group-item-action bg-light">Oficina/Escolar</a>
+                <a href="#section11" class="list-group-item list-group-item-action bg-light">Tecnología</a>
+                <a href="#section12" class="list-group-item list-group-item-action bg-light">Farmacia</a>
+      </div>
+    </div>
+  <div class="div-push"></div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      
+        <button class="btn btn-primary" id="menu-toggle">Categorías</button>
+
+        <!-- The sections -->
+        
+        <!-- Section 1 -->
+      <div id="section1" class="container">
+        <h1 class="mt-4">Marca Propia</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section2" class="container">
+        <h1 class="mt-4">Alimentos</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section3" class="container">
+        <h1 class="mt-4">Bebé</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section4" class="container">
+        <h1 class="mt-4">Hogar</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section5" class="container">
+        <h1 class="mt-4">Limpieza</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section6" class="container">
+        <h1 class="mt-4">Bebidas</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section7" class="container">
+        <h1 class="mt-4">Mascotas</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section8" class="container">
+        <h1 class="mt-4">Higiene</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section9" class="container">
+        <h1 class="mt-4">Ferretería</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section10" class="container">
+        <h1 class="mt-4">Oficina/Escolar</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section11" class="container">
+        <h1 class="mt-4">Tecnología</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+      <div id="section12" class="container">
+        <h1 class="mt-4">Farmacia</h1>
+        <%- include ('components/multiCardCarousel')%>      
+      </div>
+        
+
+      
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+  <script>
+      $("#menu-toggle").click(function(e) {
+e.preventDefault();
+$("#wrapper").toggleClass("toggled");
+});
+  </script>
+  
+<%- include ('template/_footer')%>
