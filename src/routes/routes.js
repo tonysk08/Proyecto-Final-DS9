@@ -19,5 +19,6 @@ router.get('/pedido',(req,res) => { res.render('pedido')});
 router.get('/fav',(req,res) => { res.render('fav')});
 router.get('/categorias',(req,res) => { res.render('categorias')});
 router.get('/newProduct',(req,res) => { res.render('NewProduct')});
+router.get('/oferta',(req,res) => { res.render('Ofertas')});
 
 module.exports = router;
