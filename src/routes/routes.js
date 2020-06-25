@@ -11,6 +11,12 @@ router.get('/passchange',(req,res) => { res.render('CambiarPass')});
 router.get('/cobertura',(req,res) => { res.render('cobertura')});
 router.get('/sugerencias',(req,res) => { res.render('sugerencias')});
 router.get('/supermercados',(req,res) => { res.render('supermercados')});
+router.get('/Todos',(req,res) => { res.render('Todos')});
+router.get('/Fav',(req,res) => { res.render('Fav')});
+router.get('/NewProduct',(req,res) => { res.render('NewProduct')});
+router.get('/',(req,res) => { res.render('')});
+router.get('/Paquetes',(req,res) => { res.render('Paquetes')});
+router.get('/Categorias',(req,res) => { res.render('Categorias')});
 
 
 module.exports = router;

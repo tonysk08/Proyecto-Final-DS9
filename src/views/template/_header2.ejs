@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <link  rel="icon"   href="img/favicon.ico" type="image/png" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bosstrap base sin estilos adicionales
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    -->
+
+</head>
+<body>
+  <div class="container-fluid d-block p-1 bg-dark text-white px-lg-5">
+    <div class="row justify-content-between">
+      <div class="col">
+        VIRTUAL MARKET
+      </div>
+      <div class="col d-sm-none btn-block">
+        <div class="btn-group " role="group">
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-outline-info btn-sm dropdown-toggle" style="color: white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="/registro">Registro</a>
+              <a class="dropdown-item" href="/login">Login</a>
+            </div>
+          </div>
+          <a href="/perfil" class="btn btn-outline-info btn-sm " style="color: white;">
+            Cuenta
+          </a>
+        </div>
+      </div>
+      <div class="col-4 d-none d-sm-block">
+        <div class="btn-group btn-group-sm" role="group">
+          <a href="/help" class="btn btn-outline-info btn-sm" style="color: white;">Ayuda</a>
+          <a href="/sugerencias" class="btn btn-outline-info btn-sm" style="color: white;">Sugerencias</a>
+          <a href="/perfil" class="btn btn-outline-info btn-sm" style="color: white;">Cuenta</a>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-outline-info btn-sm dropdown-toggle" style="color: white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="/registro">Registro</a>
+              <a class="dropdown-item" href="/login">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Virtual Market</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/Todos">Ver Todo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Fav">Mis favoritos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/NewProduct">Nuevos Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ofertas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Paquetes">Paquetes de comida</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Categorias">Categorías</a>
+          </li>
+          <li class="nav-item"
+          <div class="search-container">
+            <form action="#">
+              <input type="text" placeholder="Buscar" name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+          </li>
+        <li class="nav-item d-none d-sm-none">
+          <a href="#" class=" btn btn-outline-info btn-block btn-sm"><span class="material-icons">shopping_cart</span>Carrito</a>
+        </li>
+      </ul>
+      <div class="form-inline">
+        <a href="#" class="btn btn-outline-info btn-block mr-sm-2 p-1" ><span class="material-icons">shopping_cart</span>Carrito</a>
+      </div>
+    </div>
+  </nav>
