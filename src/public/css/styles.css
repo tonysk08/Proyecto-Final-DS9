@@ -135,3 +135,8 @@ footer
 .letra {
   color: #163172;
 }
+
+.posicion {
+  float: left;
+  margin-left: 15px;
+}
