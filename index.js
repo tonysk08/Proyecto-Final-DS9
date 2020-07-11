@@ -28,3 +28,16 @@ app.use(express.static(path.join(__dirname,'src/public')));
 app.listen(app.get('port'),function(){
     console.log('Server running on port '.blue+app.get('port'));
 })
+
+//Conexion a BD
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'prueba'
+});
+connection.connect((err) =>{
+    if (err) throw err;
+    console.log('Conectado a la BD!');
+});
