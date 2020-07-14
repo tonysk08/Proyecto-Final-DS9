@@ -56,28 +56,31 @@
                     </thead>
                     <tbody>
                     <tr>
-                      <% var subtotal =  0%>
+                      <% var subtotal =  0, itbms = 0%>
                       <% if (data) { %>
                         <% for(var i = 0; i < data.length; i++) { %>
               
                         <th scope="row"><%= data[i].nombreProducto %></th>
                         <td>$ <%= data[i].precioProducto %></td>
-                        <td><% subtotal += data[i].precioProducto %></td>
+                        <% subtotal+=data[i].precioProducto%>
+                        
                     </tr>
                     <% } %>
-                    
+                    <% itbms=parseFloat((subtotal*0.07).toFixed(2)) %>
+                    <% total=subtotal + itbms %>
                     <tr>
-                        <th scope="row">Subtotal</th>
+                      <th scope="row">Subtotal</th>
+                      <td>$ <%=subtotal%></td>
                     </tr>
-                    <% } %>
                     <tr>
                         <th scope="row">ITBMS 7%</th>
-                        <td>0.78</td>
+                        <td>$ <%=itbms%></td>
                     </tr>
                     <tr>
                         <th scope="row">Total</th>
-                        <td>12.01</td>
+                        <td>$ <%=total%></td>
                     </tr>
+                    <% } %>
                     </tbody>
                 </table>
                 <center>
