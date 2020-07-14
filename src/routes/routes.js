@@ -14,7 +14,7 @@ router.get('/cobertura',(req,res) => { res.render('Cobertura')});
 router.get('/sugerencias',(req,res) => { res.render('Sugerencias')});
 router.get('/supermercados',(req,res) => { res.render('Supermercados')});
 router.get('/Todos',(req,res) => { res.render('Todos')});
-router.get('/shoppingcart',(req,res) => { res.render('Carrito')});
+//router.get('/shoppingcart',(req,res) => { res.render('Carrito')});
 router.get('/pago',(req,res) => { res.render('Pago')});
 router.get('/paquetes',(req,res) => { res.render('Paquetes')});
 router.get('/pedido',(req,res) => { res.render('Pedido')});
@@ -24,7 +24,7 @@ router.get('/newProduct',(req,res) => { res.render('NewProduct')});
 router.get('/oferta',(req,res) => { res.render('Ofertas')});
 
 
-router.get('/', carritoCtrl.list);
+router.get('/shoppingcart', carritoCtrl.list);
 
 
 module.exports = router;

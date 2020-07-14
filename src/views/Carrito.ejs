@@ -56,26 +56,20 @@
                     </thead>
                     <tbody>
                     <tr>
-                      
-                        <th scope="row">Producto1</th>
-                        <td>5.99</td>
+                      <% var subtotal =  0%>
+                      <% if (data) { %>
+                        <% for(var i = 0; i < data.length; i++) { %>
+              
+                        <th scope="row"><%= data[i].nombreProducto %></th>
+                        <td>$ <%= data[i].precioProducto %></td>
+                        <td><% subtotal += data[i].precioProducto %></td>
                     </tr>
+                    <% } %>
+                    
                     <tr>
-                        <th scope="row">Producto2</th>
-                        <td>1.25</td>
+                        <th scope="row">Subtotal</th>
                     </tr>
-                    <tr>
-                        <th scope="row">Producto3</th>
-                        <td>3.99</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">SubTotal</th>
-                        <td>11.23</td>
-                    </tr>
+                    <% } %>
                     <tr>
                         <th scope="row">ITBMS 7%</th>
                         <td>0.78</td>
@@ -96,16 +90,7 @@
       </div>
     
  <br><br> 
- <% if (data) { %>
-  <% for(var i = 0; i < data.length; i++) { %>
-    <tr>
-      <td><%= (i + 1) %></td>
-      <td><%= data[i].nombreProducto %></td>
-      <td><%= data[i].precioProducto %></td>
-      <td><%= data[i].cantidadProducto %></td>
-    </tr>
-  <% } %>
-<% } %>
+
 </body>
 
 <%- include ('template/_footer')%>
