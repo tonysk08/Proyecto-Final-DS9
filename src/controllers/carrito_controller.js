@@ -1,19 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const conn = require('../../index');
 const controller = {};
 
-controller.list = (req, res) =>{
-    req.getConnection((err, conn) =>{
-        conn.getConnection('select * from productos', (err, carritoItems) =>{
-            if(err){
-                res.json(err);
-            }
-            res.render('Carrito', {
-                data: carritoItems
-            });
-        });
+controller.list = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM productos', (err, carrito) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('/', {
+        data: carrito
+     });
     });
+  });
 };
-
 module.exports = controller;

@@ -1,6 +1,4 @@
 <%- include ('template/_header')%>
-
-<% data %>
 <body>
     <br>
     <div class="container">
@@ -98,7 +96,16 @@
       </div>
     
  <br><br> 
-
+ <% if (data) { %>
+  <% for(var i = 0; i < data.length; i++) { %>
+    <tr>
+      <td><%= (i + 1) %></td>
+      <td><%= data[i].nombreProducto %></td>
+      <td><%= data[i].precioProducto %></td>
+      <td><%= data[i].cantidadProducto %></td>
+    </tr>
+  <% } %>
+<% } %>
 </body>
 
 <%- include ('template/_footer')%>

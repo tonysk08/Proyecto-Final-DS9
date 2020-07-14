@@ -1,6 +1,8 @@
 const express = require('express');
 //const navControllers = require('../controllers/')
 const router = express.Router();
+//Carrito de compras
+const carritoCtrl = require('../controllers/carrito_controller');
 
 router.get('/',(req,res) => { res.render('LandingPage')});
 router.get('/help',(req,res) => { res.render('Ayuda')});
@@ -21,8 +23,7 @@ router.get('/categorias',(req,res) => { res.render('Categorias')});
 router.get('/newProduct',(req,res) => { res.render('NewProduct')});
 router.get('/oferta',(req,res) => { res.render('Ofertas')});
 
-//Carrito de compras
-const carritoCtrl = require('../controllers/carrito_controller');
+
 router.get('/', carritoCtrl.list);
 
 
