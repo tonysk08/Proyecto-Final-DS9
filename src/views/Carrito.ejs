@@ -64,7 +64,7 @@
                         <th scope="row"><%= data[i].nombreProducto %></th>
                         <td><%= data[i].cantidadProducto %></td>
                         <td>$ <%= data[i].precioProducto*data[i].cantidadProducto %></td>
-                        <% subtotal+=data[i].precioProducto%>
+                        <% subtotal+=data[i].precioProducto*data[i].cantidadProducto%>
                         
                     </tr>
                     <% } %>
