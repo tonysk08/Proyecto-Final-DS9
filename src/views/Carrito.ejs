@@ -50,6 +50,7 @@
                 <table class="table">
                     <thead>
                     <tr>
+                      <th scope="col">Imagen</th>
                         <th scope="col">Producto</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Precio</th>
@@ -60,10 +61,11 @@
                       <% var subtotal =  0, itbms = 0%>
                       <% if (data) { %>
                         <% for(var i = 0; i < data.length; i++) { %>
-              
+                        <th><img src="<%=data[i].imagenProducto%>" width="75" height="75"></th>
+                    
                         <th scope="row"><%= data[i].nombreProducto %></th>
                         <td><%= data[i].cantidadProducto %></td>
-                        <td>$ <%= data[i].precioProducto*data[i].cantidadProducto %></td>
+                        <td style="color: green;">$ <%= data[i].precioProducto*data[i].cantidadProducto %></td>
                         <% subtotal+=data[i].precioProducto*data[i].cantidadProducto%>
                         
                     </tr>
@@ -73,17 +75,17 @@
                     <tr>
                       <th scope="row">Subtotal</th>
                       <td> </td>
-                      <td>$ <%=subtotal%></td>
+                      <td style="color: green;">$ <%=subtotal%></td>
                     </tr>
                     <tr>
                         <th scope="row">ITBMS 7%</th>
                         <td> </td>
-                        <td>$ <%=itbms%></td>
+                        <td style="color: green;">$ <%=itbms%></td>
                     </tr>
                     <tr>
                         <th scope="row">Total</th>
                         <td> </td>
-                        <td>$ <%=total%></td>
+                        <td style="color: green;">$ <%=total%></td>
                     </tr>
                     <% } %>
                     </tbody>
