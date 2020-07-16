@@ -93,9 +93,20 @@
                     <% } %>
                     </tbody>
                 </table>
-                <center>
-                    <a href="/pago" type="button" class="btn btn-success">Seleccionar Método de Pago</a>
-                </center>
+                <div class="card-footer">
+                  <form action="/checkout" method="POST">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="pk_test_51H5dA2KDd3ZOeKrKGzLiFpdmCtIk24Lg5HYg1cfc5JHGxaQn5AZLLLrAq4ThFoNqx1S7DNq4dEH14tAn8A1Z8G0c00UVOzUqvm" data-amount="1500" data-name="Virtual Market"
+                      data-image="img/Icono.png" data-locale="auto">
+                      </script>
+                    <script>
+                      document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+                    </script>
+                    <button type="submit" class="btn btn-success btn-block">
+                      Pagar <i class="fas fa-shopping-cart"></i>
+                    </button>
+                  </form>
+                </div>
             </div>
           </div>
         </div>

@@ -3,6 +3,10 @@ const express = require('express');
 const router = express.Router();
 //Carrito de compras
 const carritoCtrl = require('../controllers/carrito_controller');
+const { token } = require('morgan');
+//stripe
+const stripe = require('stripe')('sk_test_51H5dA2KDd3ZOeKrKQtrJpYAYSS2X8AgqCBOg8zw85ttAb9Jaq3P2EYfz2K13SuoTlFHJLHVHtBAwJJF5zPSK6mii00xxkfhHuI');
+
 
 router.get('/',(req,res) => { res.render('LandingPage')});
 router.get('/help',(req,res) => { res.render('Ayuda')});
@@ -25,6 +29,23 @@ router.get('/oferta',(req,res) => { res.render('Ofertas')});
 
 
 router.get('/shoppingcart', carritoCtrl.list);
+
+router.post('/checkout', async (req, res) => {
+    const customer = await stripe.customers.create({
+        email: req.body.stripeEmail,
+        source: req.body.stripeToken
+    });
+    const charge = await stripe.charges.create({
+        amount: '1500',
+        currency: 'usd',
+        customer: customer.id,
+        description: 'Compra de supermercado'       
+    });
+    console.log(charge.id);
+    //Respuesta final
+    res.render('CompraCompletada');
+  });
+
 
 
 module.exports = router;

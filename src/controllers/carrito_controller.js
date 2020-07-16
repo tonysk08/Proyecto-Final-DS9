@@ -1,5 +1,6 @@
 const controller = {};
 
+
 controller.list = (req, res) => {
   req.getConnection((err, conn) => {
     conn.query('SELECT * FROM productos', (err, carrito) => {
@@ -12,4 +13,5 @@ controller.list = (req, res) => {
     });
   });
 };
+
 module.exports = controller;
