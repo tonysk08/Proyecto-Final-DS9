@@ -58,8 +58,9 @@
                     </thead>
                     <tbody>
                     <tr>
-                      <% var subtotal =  0, itbms = 0%>
+                      <% var subtotal =  0, total = 0, itbms = 0%>
                       <% if (data) { %>
+                        
                         <% for(var i = 0; i < data.length; i++) { %>
                         <th><img src="<%=data[i].imagenProducto%>" width="75" height="75"></th>
                     
@@ -88,11 +89,12 @@
                         <th scope="row">Total</th>
                         <td> </td>
                         <td> </td>
-                        <td style="color: green;">$ <%=total%></td>
+                        <td style="color: green;">$ <i id="total"><%=total%></i></td>
                     </tr>
                     <% } %>
                     </tbody>
                 </table>
+                <!--BOTON DE PAGAR (TARJETA)-->
                 <div class="card-footer">
                   <form action="/checkout" method="POST">
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -102,10 +104,40 @@
                     <script>
                       document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
                     </script>
-                    <button type="submit" class="btn btn-success btn-block">
+                    <button id="boton-pagar" type="submit" class="btn btn-success btn-block">
                       Pagar <i class="fas fa-shopping-cart"></i>
                     </button>
+                                     
                   </form>
+                  <!--BOTON DE PAYPAL-->
+                  <div id="paypal-button-container"></div>
+                  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+                  <script>
+                    paypal.Buttons({
+                        style: {
+                            shape: 'rect',
+                            color: 'silver',
+                            layout: 'vertical',
+                            label: 'paypal',
+                            
+                        },
+                        createOrder: function(data, actions) {
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: ejsVal
+                                    }
+                                }]
+                            });
+                        },
+                        onApprove: function(data, actions) {
+                            return actions.order.capture().then(function(details) {
+                                alert('Transaccion Completada por ' + details.payer.name.given_name + '!');
+                            });
+                        }
+                    }).render('#paypal-button-container');
+                  </script>
+                  
                 </div>
             </div>
           </div>
@@ -116,5 +148,11 @@
  <br><br> 
 
 </body>
-
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+  crossorigin="anonymous"></script>
+  <script>var ejsVal= total.innerHTML    ; console.log(ejsVal)</script>
+ 
+  
 <%- include ('template/_footer')%>
