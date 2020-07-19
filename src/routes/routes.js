@@ -31,21 +31,22 @@ router.get('/oferta',(req,res) => { res.render('Ofertas')});
 router.get('/shoppingcart', carritoCtrl.list);
 
 router.post('/checkout', async (req, res) => {
+    
     const customer = await stripe.customers.create({
         email: req.body.stripeEmail,
-        source: req.body.stripeToken
+        source: req.body.stripeToken,
     });
+  
     const charge = await stripe.charges.create({
-        amount: '1500',
+        amount: req.body.amount,
         currency: 'usd',
         customer: customer.id,
         description: 'Compra de supermercado'       
     });
-    console.log(charge.id);
+    
     //Respuesta final
     res.render('CompraCompletada');
   });
-
 
 
 module.exports = router;

@@ -91,24 +91,34 @@
                         <td> </td>
                         <td style="color: green;">$ <i id="total"><%=total%></i></td>
                     </tr>
-                    <% } %>
+                         
                     </tbody>
                 </table>
                 <!--BOTON DE PAGAR (TARJETA)-->
                 <div class="card-footer">
                   <form action="/checkout" method="POST">
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                      data-key="pk_test_51H5dA2KDd3ZOeKrKGzLiFpdmCtIk24Lg5HYg1cfc5JHGxaQn5AZLLLrAq4ThFoNqx1S7DNq4dEH14tAn8A1Z8G0c00UVOzUqvm" data-amount="1500" data-name="Virtual Market"
+                      data-key="pk_test_51H5dA2KDd3ZOeKrKGzLiFpdmCtIk24Lg5HYg1cfc5JHGxaQn5AZLLLrAq4ThFoNqx1S7DNq4dEH14tAn8A1Z8G0c00UVOzUqvm" 
+                      data-amount="<%=total*100%>" data-name="Virtual Market"
                       data-image="img/Icono.png" data-locale="auto">
                       </script>
                     <script>
                       document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
                     </script>
-                    <button id="boton-pagar" type="submit" class="btn btn-success btn-block">
+                    <input type="text" id="amount" name="amount" value="<%=total*100%>" disabled hidden>
+                    <button id="boton-pagar"  class="btn btn-success btn-block">
                       Pagar <i class="fas fa-shopping-cart"></i>
                     </button>
-                                     
                   </form>
+                  <script>
+                    $(document).ready(function(){ 
+                      $('#hola').on('click',function(){
+                        var total = $('#total').text();
+                        var valorTotal = total*100;
+                        alert("Hola");
+                      });
+                    })
+                  </script>
                   <!--BOTON DE PAYPAL-->
                   <div id="paypal-button-container"></div>
                   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
@@ -117,9 +127,8 @@
                         style: {
                             shape: 'rect',
                             color: 'silver',
-                            layout: 'vertical',
+                            layout: 'horizontal',
                             label: 'paypal',
-                            
                         },
                         createOrder: function(data, actions) {
                             return actions.order.create({
@@ -136,13 +145,12 @@
                             });
                         }
                     }).render('#paypal-button-container');
-                  </script>
-                  
+                  </script>  
                 </div>
+                <% } %> 
             </div>
           </div>
         </div>
-        
       </div>
     
  <br><br> 
@@ -152,7 +160,8 @@
   src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
   integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
   crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>var ejsVal= total.innerHTML    ; console.log(ejsVal)</script>
- 
+
   
 <%- include ('template/_footer')%>
