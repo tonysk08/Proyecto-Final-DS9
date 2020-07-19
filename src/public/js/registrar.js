@@ -1,7 +1,5 @@
 //falta incluir el archivo que contenga la conexion a la BD
 
-//revisar si las declaraciones coinciden con los nombres de los campos en la BD
-
 var nombre, apellido, cedula, fecha, correo, phone, pass, rpass;
 
     nombre=document.getElementById("name").value;
@@ -10,6 +8,8 @@ var nombre, apellido, cedula, fecha, correo, phone, pass, rpass;
     fecha=document.getElementById("fecha").value;
     correo=document.getElementById("email").value;
     phone=document.getElementById("telefono").value;
+   
+   //estos tres campos no existen aun en la tabla user de la BD
     cel=document.getElementById("celular").value;
     pass=document.getElementById("password").value;
     rpass=document.getElementById("rpassword").value;
@@ -33,6 +33,7 @@ if (nysqli_num_rows(verificar_cedula)>0)
     close; //aqui debe salir porque sino lo registra duplicado sin importar el if, puse close pero en el video que vi usaban exit porque estaba en php
 }
 
+//aun no existe el campo celular en la tabla user de la bd
 verificar_celular=mysqli_query(conexion, "SELECT * FROM users WHERE celular ='celular'");
 if (nysqli_num_rows(verificar_celular)>0)
 {
