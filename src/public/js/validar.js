@@ -15,10 +15,10 @@ function validar () {
     exp_phone=/^\d{3}-\d{4}$/; //000-0000 expresion regular para predeterminar este formato al numero ingresado
     exp_cel=/^\d{4}-\d{4}$/; //0000-0000 expresion regular para predeterminar este formato al numero ingresado
     exp_p=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/; //expresion regular para controlar el formato de la contraseña
-    /*  Minimo 8 caracteres
-        Maximo 15
+    /*  Mínimo 8 caracteres
+        Máximo 15 caracteres
         Al menos una letra mayúscula
-        Al menos una letra minucula
+        Al menos una letra minúscula
         Al menos un dígito
         No espacios en blanco
         Al menos 1 caracter especial */
@@ -53,6 +53,24 @@ function validar () {
         return false;
     }
 
+    else if (phone===""&&cel==="")
+    {
+        alert("No puede dejar los campos de Teléfono y Celular vacíos, debe llenar al menos uno.");
+        return false;
+    }
+
+    else if (phone!="" && !exp_phone.test(phone))
+    {
+        alert("El formato de teléfono ingresado no es válido");
+        return false;
+    }
+
+    else if (cel!="" && !exp_cel.test(cel))
+    {
+        alert("El formato de celular ingresado no es válido");
+        return false;
+    }
+
     else if (pass.length<8)
     {
         alert("La contraseña debe tener un mínimo de 8 caracteres");
@@ -68,24 +86,6 @@ function validar () {
     else if (rpass!=pass)
     {
         alert("Las contraseñas no coinciden");
-        return false;
-    }
-
-    //aqui quiero forzar a que al menos ingrese uno, ya sea el celular o el telefono, de momento está mal porque admite ambos en blanco
-    else if (phone===""||cel==="")
-    {
-        return true;
-    }
-
-    else if (!exp_phone.test(phone))
-    {
-        alert("El formato de teléfono ingresado no es válido");
-        return false;
-    }
-
-    else if (!exp_cel.test(cel))
-    {
-        alert("El formato de celular ingresado no es válido");
         return false;
     }
     

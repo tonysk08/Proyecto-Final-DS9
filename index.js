@@ -20,7 +20,7 @@ app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'prueba'
+    database: 'virtualmarketdb'
   }, 'single'));
 
 //fija morgan
