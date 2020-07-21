@@ -17,10 +17,10 @@ app.set('views',path.join(__dirname,'src/views'));
 
 //midelwares
 app.use(myConnection(mysql, {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'virtualmarketdb'
+    host: 'mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'z83mjobv4lw0df0v',
+    password: 'p634oktas5bvfstt',
+    database: 'hkaj4tr8skt741qf'
   }, 'single'));
 
 //fija morgan
