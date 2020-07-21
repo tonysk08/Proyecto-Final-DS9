@@ -21,44 +21,22 @@
       <div class="continer">
         <div class="row">
           <!--card 1-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/super99.jpg"
-                    alt="Card izge cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">Súper 99</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
-                  </div>
-            </div>
-          </div>
-          <!--card 2-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/xtra.png"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">Súper Xtra</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
-                  </div>
-            </div>
-          </div>
-          <!--card 3-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/elmachetazo.jpg"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">El Machetazo</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block ">Ver Productos</a>
-                  </div>
-            </div>
-          </div>
+          <% if(data) {%>
+            <% for (i=0; i < 3; i++) {%>
+              <div class="col-md-4">
+                <div class="card">
+                  <img class="card-img-top card-img-top-250 img-fluid"
+                        src="<%=data[i].logo%>"
+                        alt="Card izge cap">
+                      <div class="card-body">
+                        <h4 class="card-title"><span class="letra"><%=data[i].nombre%></span></h4>
+                        <p class="card-text"><%=data[i].horario%></p>
+                        <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
+                      </div>
+                </div>
+              </div>
+            <%}%>
+          <%}%>
         </div>
       </div>
     </div>
@@ -68,44 +46,22 @@
       <div class="continer">
         <div class="row">
             <!--card 1-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/ribasmith.jpg"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">Riba Smith</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
+            <% if(data) {%>
+              <% for (i=3; i < 6; i++) {%>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img class="card-img-top card-img-top-250 img-fluid"
+                          src="<%=data[i].logo%>"
+                          alt="Card izge cap">
+                        <div class="card-body">
+                          <h4 class="card-title"><span class="letra"><%=data[i].nombre%></span></h4>
+                          <p class="card-text"><%=data[i].horario%></p>
+                          <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
+                        </div>
                   </div>
-            </div>
-          </div>
-          <!--card 2-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/pricesmart.png"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">PriceSmart</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
-                  </div>
-            </div>
-          </div>
-          <!--card 3-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/elfuerte.jpg"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">Súper Centro El Fuerte</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
-                  </div>
-            </div>
-          </div>
+                </div>
+              <%}%>
+            <%}%>
         </div>
       </div>
     </div>
@@ -114,45 +70,21 @@
     <div class="row row-equal carousel-item mt-0">
       <div class="continer">
         <div class="row">
-            <!--card 1-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/elrey.jpg"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">Supermercado Rey</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
+          <!--card 1-->
+          <% if(data) {%>
+            <% for (i=6; i < 9; i++) {%>
+              <div class="col-md-4">
+                <div class="card">
+                  <img class="card-img-top card-img-top-250 img-fluid" src="<%=data[i].logo%>" alt="Card izge cap">
+                    <div class="card-body">
+                      <h4 class="card-title"><span class="letra"><%=data[i].nombre%></span></h4>
+                      <p class="card-text"><%=data[i].horario%></p>
+                      <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
                   </div>
-            </div>
-          </div>
-          <!--card 2-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/mrprecio.png"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">Mr. Precio</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
-                  </div>
-            </div>
-          </div>
-          <!--card 3z-->
-          <div class="col-md-4">
-            <div class="card">
-              <img class="card-img-top card-img-top-250 img-fluid"
-                    src="img/justoybueno.jpg"
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title"><span class="letra">Justo & Bueno</span></h4>
-                    <p class="card-text">Horario: 7:00 am - 7:00 pm</p>
-                    <a class="btn btn-outline-secondary btn-block">Ver Productos</a>
-                  </div>
-            </div>
-          </div>
+                </div>
+              </div>
+            <%}%>
+          <%}%>
         </div>
       </div>
     </div>
