@@ -1,6 +1,5 @@
 <%- include ('template/_header')%>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -48,7 +47,6 @@
       </div>
     </div>
   </section>
-
   <!-- inclusion del carrusel multiple-->
   <%- include ('components/multiCardCarousel')%>
 <!--titulo-->
@@ -59,14 +57,14 @@
     </div>
   </div>
 </section>
-<!-- cuadros de distitntos productos-->
+<!-- cuadros de distintos productos-->
 <div class="container">
   <div class="row">
-    <% if (data) {%>
-      <% for(var i = 0; i < data.length; i++) {%>
+    <% if (prod) {%>
+      <% for(var i = 0; i < prod.length; i++) {%>
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
-        <img src="<%=data[i].imagen%>" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
+        <img src="<%=prod[i].imagen%>" class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/>
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
@@ -76,7 +74,7 @@
                 <a href="#" class="letra"><i class="far fa-heart" style="font-size: 25px;"></i></a>
               </div>
             <small class="text-muted">
-              <b><span class="letra">Precio: </span><span class="text-success"> <%= console.log(data[i].precio) %></span></b>
+              <b><span class="letra">Precio: </span><span class="text-success"> <%= prod[i].precio %></span></b>
             </small>
           </div>
         </div>

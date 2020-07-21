@@ -31,7 +31,7 @@ router.get('/oferta',(req,res) => { res.render('Ofertas')});
 
 router.get('/shoppingcart', carritoCtrl.list);
 router.get('/', landingCtrl.list);
-router.get('/see', landingCtrl.listRec);
+
 
 router.post('/checkout', async (req, res) => {
     
