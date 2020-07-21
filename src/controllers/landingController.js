@@ -1,4 +1,4 @@
-const controller = {};
+var controller = {};
 
 
 controller.list = (req, res) => {
@@ -13,5 +13,13 @@ controller.list = (req, res) => {
     });
   });
 };
-
+controller.listRec = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT nombre, imagen, precio from productos', (err, productos) => {
+     res.render('LandingPage', {
+        data: productos
+     })
+    });
+  });
+};
 module.exports = controller;
