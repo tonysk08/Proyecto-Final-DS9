@@ -8,7 +8,7 @@ const { token } = require('morgan');
 const stripe = require('stripe')('sk_test_51H5dA2KDd3ZOeKrKQtrJpYAYSS2X8AgqCBOg8zw85ttAb9Jaq3P2EYfz2K13SuoTlFHJLHVHtBAwJJF5zPSK6mii00xxkfhHuI');
 
 
-//router.get('/',(req,res) => { res.render('LandingPage')});
+router.get('/test',(req,res) => { res.render('jquey')});
 router.get('/help',(req,res) => { res.render('Ayuda')});
 
 router.get('/registro',controllers.UserController.getSignUp);
