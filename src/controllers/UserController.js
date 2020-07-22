@@ -13,25 +13,24 @@ controller.postSignUp = (req, res, next) =>{
     var user =
     {
         nombre : req.body.nombre,
-        apellido : req.body.apellido,
+        apellido : req.body.lastname,
         cedula : req.body.cedula,
         email : req.body.email,
         password : password,
+        celular : req.body.celular,
         telefono : req.body.telefono,
-        fecha : req.body.fecha
+        fechaNacimiento : req.body.fecha,
     };
 
-
-    controller.list = (req, res) => {
-        req.getConnection((err, conn) => {
-          conn.query('INSERT INTO users SET ?', user, (err, rows, fields) => {
-           if (err) {
-            res.json(err);
-           }
-           res.render('perfil')
-          });
-        });
-      };
+    req.getConnection((err, conn) => {
+      console.log(user)
+      conn.query('INSERT INTO users SET ?', user, (err, rows, fields) => {
+       if (err) {
+        res.json(err);
+       }
+       res.render('perfil')
+      });
+    });
 
 } 
 module.exports = controller;
