@@ -1,7 +1,7 @@
 const express = require('express');
 const path=require('path');
 const morgan = require('morgan');
-const navRoutes = require(path.join(__dirname,'src/routes/routes'));
+const Routes = require(path.join(__dirname,'src/routes/routes'));
 const mysql = require('mysql'),
       myConnection = require('express-myconnection');
 
@@ -25,10 +25,11 @@ app.use(myConnection(mysql, {
 
 //fija morgan
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 //usando rutas
-app.use('/',navRoutes)
+app.use('/',Routes)
 
 //fijando archivos estaticos publicos
 app.use(express.static(path.join(__dirname,'src/public')));
