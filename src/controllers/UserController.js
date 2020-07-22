@@ -1,6 +1,5 @@
 const controller = {};
 var bcrypt = require('bcryptjs');
-var mysql = require('mysql');
 
 controller.getSignUp = (req, res, next) => {
     res.render("registro")
@@ -28,12 +27,13 @@ controller.postSignUp = (req, res, next) =>{
        if (err) {
         res.json(err);
        }
-       res.render('login')
+       res.redirect('login')
       });
     });
 
 } 
 controller.getSignIn = (req, res, next) => {
+
     res.render("login")
 }
 

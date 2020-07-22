@@ -16,16 +16,16 @@ router.get('/help',(req,res) => { res.render('Ayuda')});
 
 router.get('/registro',controllers.UserController.getSignUp);
 router.post('/registro',controllers.UserController.postSignUp);
-router.get('/login',controllers.UserController.getSignIn);
+router.get('/signin',controllers.UserController.getSignIn);
 router.get('/login',(req,res) => { res.render('Login')});
 router.get('/profile',(req,res) => { res.render('Perfil')});
 
 router.post('/login',
     passport.authenticate('local', {
-    successRedirect : '/',
+    successRedirect : '/profile',
     failureRedirect : '/login',
-    failureFlash:true})
-    ); 
+    failureFlash:true
+})); 
 
 router.get('/passchange',(req,res) => { res.render('RecuperarPass')});
 router.get('/cobertura',(req,res) => { res.render('Cobertura')});

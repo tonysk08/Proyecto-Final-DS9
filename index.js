@@ -2,10 +2,10 @@ const express = require('express');
 const path=require('path');
 const morgan = require('morgan');
 var cookieParser = require('cookie-parser');
-var flash = require('connect-flash');
-var session = require('express-session');
+const flash = require('connect-flash');
+const session = require('express-session');
 const Routes = require(path.join(__dirname,'src/routes/routes'));
-var passport = require('passport');
+const passport = require('passport');
 const mysql = require('mysql'),
       myConnection = require('express-myconnection');
 
