@@ -27,7 +27,7 @@ controller.postSignUp = (req, res, next) =>{
        if (err) {
         res.json(err);
        }
-       res.render('perfil')
+       res.send("Te has registrado.");
       });
     });
 
