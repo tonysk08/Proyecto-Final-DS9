@@ -11,13 +11,13 @@
             <div class="d-flex justify-content-center">
             <i class="fas fa-user-circle" style='font-size:100px'></i></div>
             
-            <form class="form-signin" action="js\validarlogin.js" method="POST">
+            <form class="form-signin" action="/login" method="POST">
               <div class="form-label-group"><br>
-                <input type="email" id="Email" class="form-control" placeholder="Correo Electrónico" style="text-align: center" required autofocus><br>
+                <input type="email" id="email" name="username" class="form-control" placeholder="Correo Electrónico" style="text-align: center" required autofocus ><br>
               </div>
 
               <div class="form-label-group text-center">
-                <input type="password" id="Password" class="form-control" placeholder="Contraseña" style="text-align: center" required>
+                <input type="password" id="password" name='password' class="form-control" placeholder="Contraseña" style="text-align: center" required>
                 <a class="text-darkyellow" href="/passchange">¿Olvidaste tu contraseña?</a><br><br>
               </div>
 
