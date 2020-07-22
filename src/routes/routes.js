@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const controllers = require('../controllers/_index');
+const perfilCtrl = require('../controllers/perfilController');
 
 const { token } = require('morgan');
 //stripe
@@ -14,7 +15,7 @@ router.get('/help',(req,res) => { res.render('Ayuda')});
 router.get('/registro',controllers.UserController.getSignUp);
 router.post('/registro',controllers.UserController.postSignUp);
 router.get('/login',(req,res) => { res.render('Login')});
-router.get('/profile',(req,res) => { res.render('Perfil')});
+//router.get('/profile',(req,res) => { res.render('Perfil')});
 
 
 router.get('/passchange',(req,res) => { res.render('RecuperarPass')});
@@ -33,6 +34,7 @@ router.get('/oferta',(req,res) => { res.render('Ofertas')});
 
 router.get('/shoppingcart', controllers.carrito_controller.list);
 router.get('/', controllers.landingController.list);
+router.get('/profile', perfilCtrl.list);
 
 
 router.post('/checkout', async (req, res) => {
