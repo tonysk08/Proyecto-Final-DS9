@@ -14,6 +14,7 @@ app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'src/views'));
 
 //midelwares
+
 //fija morgan
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
@@ -34,8 +35,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'password',
-    database: 'prueba'
+    password: '',
+    database: 'virtualmarketdb'
 });
 connection.connect((err) =>{
     if (err) throw err;

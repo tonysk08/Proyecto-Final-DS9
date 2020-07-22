@@ -33,9 +33,9 @@
                         
                         </ul>
                     
-                   </div>
+                  </div>
                    
-                 </div>
+                </div>
                </div>
             </div>
             <div class="col-lg-8">
@@ -48,71 +48,95 @@
                     
                     <div class="tab-pane" id="edit">
                         <form>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="text" value="Mark">
+                            <% if(data){%>
+                            <% for(var i = 0; i < data.length; i++) { %>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="<%= data[i].nombre %>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="text" value="Jhonsan">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Apellido</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="<%= data[i].apellido %>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Cédula</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="text" value="8-888-8888">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Cédula</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="<%= data[i].cedula %>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Cambiar foto</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="file">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Cambiar foto</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="file">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Teléfono o Celular</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="number" value="507123456">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Celular</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="number" value="<%= data[i].celular %>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Dirección</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="text" value="" placeholder="Calle">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Teléfono</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="number" value="<%= data[i].telefono %>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label"></label>
-                                <div class="col-lg-6">
-                                    <input class="form-control" type="text" value="" placeholder="Ciudad">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="<%= data[i].email %>">
+                                    </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <input class="form-control" type="text" value="" placeholder="Provincia">
+                            <%}%>
+                            <%}%>
+
+                            <% if (ubic) {%>
+                            <% for(var i = 0; i < ubic.length; i++) { %>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Dirección</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="<%= ubic[i].corregimiento %><%= ubic[i].barriada %><%= ubic[i].calle %>" placeholder="Calle">
+                                    </div>
                                 </div>
-                            </div>
-                           
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Fecha de nacimiento</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="date" >
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="text" value="<%= ubic[i].distrito %>" placeholder="Ciudad">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input class="form-control" type="text" value="<%= ubic[i].provincia %>" placeholder="Provincia">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Correo electrónico</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="email" value="mark@example.com">
+                            <%}%>
+                            <%}%>
+
+                            <% if (date) {%>
+                            <% for(var i = 0; i < date.length; i++) { %>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Fecha de nacimiento</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="date" value="<%= date[i].dia %><%= date[i].mes %><%= date[i].año %>">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
-                                <div class="col-lg-9">
-                                    <input class="form-control" type="password" value="11111122333">
+                            <%}%>
+                            <%}%>
+
+                            <% if (pass) {%>
+                            <% for(var i = 0; i < pass.length; i++) { %>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Contraseña</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" value="<%= pass[i].UsersSecret %>">
+                                    </div>
                                 </div>
-                            </div>
-                            
+                            <%}%>
+                            <%}%>
+
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label"></label>
                                 <div class="col-lg-9">
@@ -125,8 +149,7 @@
                 </div>
              </div>
            </div>
-        </div>
-            
     </div>
+            
 </div>
 <%- include ('template/_footer')%>
