@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-var passport=require('passport');
+var passport = require('passport');
 const controllers = require('../controllers/_index');
 
 const { token } = require('morgan');
@@ -20,11 +20,12 @@ router.get('/login',controllers.UserController.getSignIn);
 router.get('/login',(req,res) => { res.render('Login')});
 router.get('/profile',(req,res) => { res.render('Perfil')});
 
-router.post('/login', passport.authtenticate('local', {
+router.post('/login',
+    passport.authenticate('local', {
     successRedirect : '/',
     failureRedirect : '/login',
-    failureFlash:true
-})); 
+    failureFlash:true})
+    ); 
 
 router.get('/passchange',(req,res) => { res.render('RecuperarPass')});
 router.get('/cobertura',(req,res) => { res.render('Cobertura')});
@@ -38,6 +39,7 @@ router.get('/favoritos',(req,res) => { res.render('Fav')});
 router.get('/categorias',(req,res) => { res.render('Categorias')});
 router.get('/newProduct',(req,res) => { res.render('NewProduct')});
 router.get('/oferta',(req,res) => { res.render('Ofertas')});
+
 
 
 router.get('/shoppingcart', controllers.carrito_controller.list);

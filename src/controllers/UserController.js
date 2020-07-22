@@ -36,4 +36,6 @@ controller.postSignUp = (req, res, next) =>{
 controller.getSignIn = (req, res, next) => {
     res.render("login")
 }
+
+
 module.exports = controller;
