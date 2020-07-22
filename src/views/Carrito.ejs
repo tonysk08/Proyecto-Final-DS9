@@ -25,26 +25,27 @@
                     <div><td>$<%=data[i].precio%></td></div>                                         
                       <td>
                         <div id="ctds">
-                          <input type="number" min="1" value="1" style="width: 50px;">
+                          <input id="ctd" type="number" min="1" value="1" style="width: 50px;">
                         </div>                       
-                      </td>                                                          
+                      </td>                                                                                                      
                       <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td> 
                   </tr>                    
-                <%subtotal = data[i].precio*cantidad; console.log(cantidad);%>                        
+                                                        
+                <%}%>    
+                <!--CREA CLASES DINAMICAS PARA LOS INPUTS-->
                 <script>
                   var counter=0;
-                $("#ctds input").each(function(){
-                counter++;
-                    var self=$(this);
-                    self.addClass("div"+counter);
-                    var tdCounter=0;
-                    self.find('input').each(function(){
-                    tdCounter++;
-                      $(this).addClass("ctd"+tdCounter);
-                    });
-                });  
-                </script>
-                <%}%>                                 
+                  $("#ctds input").each(function(){
+                  counter++;
+                      var self=$(this);
+                      self.addClass("div"+counter);                                       
+                      var tdCounter=0;
+                      self.find('input').each(function(){
+                      tdCounter++;
+                        $(this).addClass("ctd"+tdCounter);
+                      });                    
+                  });  
+                  </script>                          
                     <% itbms=parseFloat((subtotal*0.07).toFixed(2)) %>
                     <% total=subtotal + itbms %>
                     <thead>                      
@@ -123,7 +124,7 @@
 <br><br> 
 
 </body>
-
+<script>var ctd= ctd.innerHTML    ; console.log(ctd)</script>
 <script>var ejsVal= total.innerHTML    ; console.log(ejsVal)</script>
 
   
