@@ -4,6 +4,7 @@ var passport = require('passport');
 const controllers = require('../controllers/_index');
 
 const { token } = require('morgan');
+const controller = require('../controllers/UserController');
 
 
 //stripe
@@ -18,7 +19,8 @@ router.get('/registro',controllers.UserController.getSignUp);
 router.post('/registro',controllers.UserController.postSignUp);
 router.get('/signin',controllers.UserController.getSignIn);
 router.get('/login',(req,res) => { res.render('Login')});
-router.get('/profile',(req,res) => { res.render('Perfil')});
+router.get('/profile',(req,res) => { res.render('Perfil',{auth:req.isAuthenticated(),user:req.user})});
+router.get('/logout',controllers.UserController.logout);
 
 router.post('/login',
     passport.authenticate('local', {

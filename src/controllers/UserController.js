@@ -27,6 +27,7 @@ controller.postSignUp = (req, res, next) =>{
        if (err) {
         res.json(err);
        }
+
        res.redirect('login')
       });
     });
@@ -37,5 +38,9 @@ controller.getSignIn = (req, res, next) => {
     res.render("login")
 }
 
+controller.logout = (req, res, next) =>{
+  req.logout();
+  res.redirect('/');
+};
 
 module.exports = controller;
