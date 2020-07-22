@@ -22,20 +22,29 @@
                     <% for(var i = 0; i < data.length; i++){%>
                     <th scope="row"><img src="<%=data[i].imagen%>" width="75" height="75"></th>
                     <td><%=data[i].nombre%></td>
-                    <div><td>$<%=data[i].precio%></td></div>
-                    <div class="div1">
-                      <div class="div2">
-                        <td><input type="number" min="1" value="1" style="width: 50px;"></td>
-                      </div>
-                    </div>
-                      <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                  </tr>
-                <script>cantidad = document.getElementsByName('x').value;</script>   
+                    <div><td>$<%=data[i].precio%></td></div>                                         
+                      <td>
+                        <div id="ctds">
+                          <input type="number" min="1" value="1" style="width: 50px;">
+                        </div>                       
+                      </td>                                                          
+                      <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td> 
+                  </tr>                    
                 <%subtotal = data[i].precio*cantidad; console.log(cantidad);%>                        
-                <%}%>
-                  <script>
-                                   
-                  </script> 
+                <script>
+                  var counter=0;
+                $("#ctds input").each(function(){
+                counter++;
+                    var self=$(this);
+                    self.addClass("div"+counter);
+                    var tdCounter=0;
+                    self.find('input').each(function(){
+                    tdCounter++;
+                      $(this).addClass("ctd"+tdCounter);
+                    });
+                });  
+                </script>
+                <%}%>                                 
                     <% itbms=parseFloat((subtotal*0.07).toFixed(2)) %>
                     <% total=subtotal + itbms %>
                     <thead>                      
@@ -107,13 +116,11 @@
                     }).render('#paypal-button-container');
                   </script>  
                 </div>
-             </div> 
-          </div>
-          </div>
+          </div> 
         </div>
-      </div>
-    
- <br><br> 
+      </div>        
+    </div>    
+<br><br> 
 
 </body>
 
