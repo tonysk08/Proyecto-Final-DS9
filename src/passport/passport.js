@@ -33,7 +33,7 @@ module.exports = function(passport){
                             });
                         }
                     }
-                    return done (null, false);
+                    return done (null, false, {data:req.flash('Error email o pasword incorrecto')});
                 })
             })
         }
