@@ -3,7 +3,7 @@ var bcrypt = require('bcryptjs');
 var mysql = require('mysql');
 
 controller.getSignUp = (req, res, next) => {
-    res.render("perfil")
+    res.render("Perfil")
 }
 
 controller.postSignUp = (req, res, next) =>{
@@ -15,11 +15,11 @@ controller.postSignUp = (req, res, next) =>{
         nombre : req.body.nombre,
         apellido : req.body.apellido,
         cedula : req.body.cedula,
-        telefono : req.body.telefono,
         email : req.body.email,
-        fechaNacimiento : req.body.fecha,
         password : password,
-        
+        telefono : req.body.telefono,
+        fechaNacimiento : req.body.fecha,
+                
     };
 
     req.getConnection((err, conn) => {
@@ -28,7 +28,7 @@ controller.postSignUp = (req, res, next) =>{
        if (err) {
         res.json(err);
        }
-       res.render('perfil')
+       res.render('Perfil')
       });
     });
 

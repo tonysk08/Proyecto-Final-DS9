@@ -16,7 +16,8 @@ router.get('/registro',controllers.UserController.getSignUp);
 router.post('/registro',controllers.UserController.postSignUp);
 router.get('/login',(req,res) => { res.render('Login')});
 //router.get('/profile',(req,res) => { res.render('Perfil')});
-
+router.get('/profile',controllers.perfilUpController.getSignUp);
+router.post('/profile',controllers.perfilUpController.postSignUp); 
 
 router.get('/passchange',(req,res) => { res.render('RecuperarPass')});
 router.get('/cobertura',(req,res) => { res.render('Cobertura')});

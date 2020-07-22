@@ -17,7 +17,6 @@ controller.postSignUp = (req, res, next) =>{
         cedula : req.body.cedula,
         email : req.body.email,
         password : password,
-        celular : req.body.celular,
         telefono : req.body.telefono,
         fechaNacimiento : req.body.fecha,
     };
