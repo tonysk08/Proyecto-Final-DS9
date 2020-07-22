@@ -40,16 +40,16 @@ router.post('/checkout', async (req, res) => {
         email: req.body.stripeEmail,
         source: req.body.stripeToken,
     });
-  
+
     const charge = await stripe.charges.create({
-        amount: req.body.amount,
+        amount: parseInt(req.body.amount),
         currency: 'usd',
         customer: customer.id,
         description: 'Compra de supermercado'       
     });
     
     //Respuesta final
-    res.render('CompraCompletada');
+    res.send("Transaccion Completada");
   });
 
 

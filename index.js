@@ -19,7 +19,7 @@ app.set('views',path.join(__dirname,'src/views'));
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'password',
     database: 'virtualmarketdb'
   }, 'single'));
 

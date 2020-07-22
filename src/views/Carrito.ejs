@@ -84,7 +84,7 @@
                     <script>
                       document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
                     </script>
-                    <input type="text" id="amount" name="amount" disabled hidden>
+                    <input type="text" id="amount" name="amount">
                     <button id="boton-pagar"  class="btn btn-success btn-block">
                       Pagar <i class="fas fa-shopping-cart"></i>
                     </button>
@@ -148,7 +148,6 @@ $(document).ready(function(){
 
   document.getElementsByClassName("stripe-button")[0].dataset.amount=(ejsVal*100).toFixed(2)
   document.getElementById("amount").value=(ejsVal*100).toFixed(2)
-  
  }
 })
 
