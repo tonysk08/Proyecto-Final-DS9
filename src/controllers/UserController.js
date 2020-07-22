@@ -28,9 +28,12 @@ controller.postSignUp = (req, res, next) =>{
        if (err) {
         res.json(err);
        }
-       res.render('perfil')
+       res.render('login')
       });
     });
 
 } 
+controller.getSignIn = (req, res, next) => {
+    res.render("login")
+}
 module.exports = controller;

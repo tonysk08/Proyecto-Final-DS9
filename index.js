@@ -5,6 +5,13 @@ const Routes = require(path.join(__dirname,'src/routes/routes'));
 const mysql = require('mysql'),
       myConnection = require('express-myconnection');
 
+var cookieParser = require('cookie-parser');
+var flash = require('connect-flash');
+var session = require('express-session');
+var passport = require('passport');
+
+require ('./src/passport/passport')(passport);
+
 //moddulo extra para dar color a la consola inecesario
 const colors = require('colors');
 
@@ -22,6 +29,17 @@ app.use(myConnection(mysql, {
     password: '',
     database: 'virtualmarketdb'
   }, 'single'));
+
+  app.use(cookieParser());
+  app.use(session({
+    secret: 'secret', //la clave secreta es la forma en la que nuestra aplicacion va a poder recuperar nuestras sesiones una vez se requiera esas variables de sesion
+    resave: false,
+    saveUninitialized: false
+    }));
+  app.use(flash());
+
+  app.use(passport.initialized());
+  app.use(passport.session());
 
 //fija morgan
 app.use(morgan('dev'));

@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
-
+var passport=require('passport');
 const controllers = require('../controllers/_index');
 
 const { token } = require('morgan');
+
+
 //stripe
 const stripe = require('stripe')('sk_test_51H5dA2KDd3ZOeKrKQtrJpYAYSS2X8AgqCBOg8zw85ttAb9Jaq3P2EYfz2K13SuoTlFHJLHVHtBAwJJF5zPSK6mii00xxkfhHuI');
+
 
 
 router.get('/test',(req,res) => { res.render('jquey')});
@@ -13,9 +16,15 @@ router.get('/help',(req,res) => { res.render('Ayuda')});
 
 router.get('/registro',controllers.UserController.getSignUp);
 router.post('/registro',controllers.UserController.postSignUp);
+router.get('/login',controllers.UserController.getSignIn);
 router.get('/login',(req,res) => { res.render('Login')});
 router.get('/profile',(req,res) => { res.render('Perfil')});
 
+router.post('/login', passport.authtenticate('local', {
+    successRedirect : '/',
+    failureRedirect : '/login',
+    failureFlash:true
+})); 
 
 router.get('/passchange',(req,res) => { res.render('RecuperarPass')});
 router.get('/cobertura',(req,res) => { res.render('Cobertura')});
