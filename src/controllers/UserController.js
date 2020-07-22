@@ -1,4 +1,5 @@
 const controller = {};
+var bcrypt = require('bcryptjs');
 
 
 controller.getSignUp = (req, res, next) => {
